@@ -7,7 +7,7 @@ nopath: mymath main.c
 	gcc -o $@ main.c -lmymath -L./
 
 path: mymath main.c
-	gcc -o $@ main.c -lmymath -L./ -Wl,-rpath=/tmp/shared_lib
+	gcc -o $@ main.c -lmymath -L./ -Wl,-rpath=$(shell pwd)
 
 dynamic: dynamic.c
 	gcc -o $@ $< -ldl
